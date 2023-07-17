@@ -9,6 +9,6 @@ ensureFileSync('./txt.txt');
 //   writeFileSync('./txt.txt', res);
 // });
 setTimeout(() => {
-  writeFileSync('./txt.txt', '123456wwww');
-}, 20000);
+  writeFileSync('./txt.txt', '123456wwwwasdasd');
+}, 30000);
 module.exports = {};
