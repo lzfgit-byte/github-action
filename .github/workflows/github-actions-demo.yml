@@ -19,6 +19,8 @@ jobs:
           TZ="Asia/Shanghai" date "+%Y-%m-%d %H:%M:%S" >> actions.txt
           today=`TZ="Asia/Shanghai" date +"%Y-%m-%d"`
           npm install
+          node ./scripts/load.js
+#          rm -rf 3.html
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
