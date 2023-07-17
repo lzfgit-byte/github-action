@@ -21,15 +21,15 @@ jobs:
 #      - name: List files in the repository
 #        run: |
 #          ls ${{ github.workspace }}
-      - run: cd ${{ github.workspace }}
-      - run: npm i
-      - run: ls
-#      - name: run shell
-#        run: |
-#          cd ${{ github.workspace }}
-#          ls
-#          node -v
-#          npm i
+#      - run: cd ${{ github.workspace }}
+#      - run: npm i
+#      - run: ls
+      - name: run shell
+        run: |
+          cd ${{ github.workspace }}
+          node -v
+          npm i
+          ls
 
 
 
