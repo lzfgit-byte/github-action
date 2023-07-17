@@ -23,9 +23,11 @@ jobs:
 #          ls ${{ github.workspace }}
       - name: run shell
         run: |
-          node -v
-          npm i
           cd ${{ github.workspace }}
           ls
+          node -v
+          npm i
+          
+         
 
 
