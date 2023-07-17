@@ -26,10 +26,13 @@ jobs:
 #      - run: ls
       - name: run shell
         run: |
-          cd ${{ github.workspace }}
-          node -v
-          npm i
-          ls
+          date "+%Y-%m-%d %H:%M:%S" >> actions.txt
+          today=`date +"%Y-%m-%d"`
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "[${today}] done"
+          git push
 
 
 
