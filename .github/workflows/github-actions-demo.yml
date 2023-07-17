@@ -2,28 +2,19 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    # 触发推送事件时执行
     branches:
       - main
   schedule:
-    # * is a special character in YAML so you have to quote this string
       - cron: '0 8 * * *'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-#      github.event_name  runner.os  github.ref github.repository job.status
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
 #          cache: 'npm'
-#      - name: List files in the repository
-#        run: |
-#          ls ${{ github.workspace }}
-#      - run: cd ${{ github.workspace }}
-#      - run: npm i
-#      - run: ls
       - name: run shell
         run: |
           TZ="Asia/Shanghai" date "+%Y-%m-%d %H:%M:%S" >> actions.txt
