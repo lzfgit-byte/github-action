@@ -24,8 +24,5 @@ jobs:
           ls ${{ github.workspace }}
           node -v
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - run: |
-          node -v
+
+
