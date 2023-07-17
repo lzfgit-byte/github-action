@@ -1,11 +1,9 @@
 const axios = require('axios');
-axios.interceptors.response = (config) => {
-  const token = useAuthorization();
-  if (token.value) {
-    config.headers.set(AUTHORIZATION_KEY, `Bearer ${token.value?.access_token}`);
-  }
-  if (isBaseType(config.data)) {
-    config.headers.set('Content-Type', 'application/json;charset=UTF-8');
-  }
-  return config;
+const client = axios.create();
+client.interceptors.response.use((response) => {
+  return response.data;
+});
+module.exports = {
+  axiosGet: (url) => client.get(url),
+  axiosPost: (url, data) => client.post(url, data),
 };
