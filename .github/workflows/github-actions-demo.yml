@@ -26,8 +26,8 @@ jobs:
 #      - run: ls
       - name: run shell
         run: |
-          date "+%Y-%m-%d %H:%M:%S" >> actions.txt
-          today=`date +"%Y-%m-%d"`
+          TZ="Asia/Shanghai" date "+%Y-%m-%d %H:%M:%S" >> actions.txt
+          today=`TZ="Asia/Shanghai" date +"%Y-%m-%d"`
           npm install
           ls
           node ./scripts/load.js
